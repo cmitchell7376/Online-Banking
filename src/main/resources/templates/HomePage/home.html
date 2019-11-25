@@ -2,18 +2,69 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
     <head th:replace="fragments :: head"></head>
     <body>
-
-        <div class="header-background">
-            <img th:src="@{/images/tech-background.jpg}" class="header-image" alt="Not Found"/>
-            <h3 class="welcome-text">Welcome To Diesel Banking</h3>
-            <h5 class="welcome-text2">Where you're money is safe!</h5>
-        </div>
-
         <div id="page-container">
             <div id="content-wrap">
+                <header>
+                    <div class="header-background">
+                        <img th:src="@{/images/tech-background.jpg}" class="header-image" alt="Not Found"/>
+                        <h3 class="welcome-text">Welcome To Diesel Banking</h3>
+                        <h5 class="welcome-text2">Where you're money is safe!</h5>
+                        <nav th:replace="fragments :: nav"></nav>
+                    </div>
+                </header>
+                <div id="home-content">
+                    <div class="results-box">
+                        <img th:src="@{/images/Black_Computer.png}" class="computer-image" alt="Not Found">
+                        <h3 class="results-text">Results</h3>
+                        <div class="header-per">
+                            <span >This is Global Business bank which is under business
+                            and finance <br/> category for your website design. Freedesignertemplates.com
+                            is <br/> a free collection of site templates with HTML layouts which are <br/> frequently
+                            updated.<br/><br/>These web design layouts are developed by the professional<br/>
+                            designers for you to make your task easy in creating a website and <br/> are easy
+                            to download.</span>
+                        </div>
+                    </div>
+                    <div class="opportunities">
+                        <img th:src="@{/images/reconnent.png}" class="computer-image" alt="Not Found">
+                        <h3 class="results-text">Opportunities</h3>
+                        <div class="header-per">
+                            <span >These Global Business bank would be idle for building a successful<br/>
+                            online businesses. Download the required HTML template, install it <br/>
+                            and edit the existing content with your original text.<br/><br/>The entire
+                            website are pre-designed websites all you need to do is adding your own
+                            personal content and start your own website.</span>
+                        </div>
+                    </div>
+                    <div class="solutions">
+                        <h3 class="results-test2">Solutions</h3>
+                        <img th:src="@{/images/question_mark.png}" class="computer-image" alt="Not Found">
+                        <div class="header-per2">
+                            <span>There are various other template categories like Art, Finance, Nature, Night club
+                            Communication, Computer, Music, Religious, Fashion, Holiday, Travel, Health, Medicine.
+                             This free Global Business bank<br/> which is built using HTML and css.<br/><br/>
+                            These are user friendly that any user can download and customize it according to
+                            their wish.</span>
+                        </div>
+                    </div>
+                    <div class="service">
+                        <h4 class="service-header">Services</h4>
+                        <div class="service-links">
+                            <ul>
+                                <li><a href="#">www.javatpoint.com</a></li>
+                                <li><a href="#">www.javacspoint.com</a></li>
+                                <li><a href="#">www.javatpoint.com/forum</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="welcome">
+                        <h4 class="service-header">Welcome</h4>
+                    </div>
+                    <div class="news">
+                        <h4 class="service-header">News & Events</h4>
+                    </div>
 
-                <nav th:replace="fragments :: nav"></nav>
-
+                </div>
             </div>
             <footer th:replace="fragments :: footer"></footer>
         </div>
