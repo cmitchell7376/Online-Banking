@@ -172,3 +172,57 @@ li{
     left: 10px;
     top: 26px;
 }
+
+.service2{
+    position: absolute;
+    border: 1px solid white;
+    border-right: 2px solid black;
+    border-right-style: dotted;
+    height: 365px;
+    width: 400px;
+    top: 230px;
+}
+
+#account-content{
+    min-height: calc(100vh - 70px);
+}
+
+.welcome2{
+    position: absolute;
+    border: 1px solid white;
+    border-left: 2px solid black;
+    border-left-style: dotted;
+    height: 365px;
+    width: 400px;
+    left: 957px;
+    top: 230px;
+}
+
+.form{
+    position: absolute;
+    height: 365px;
+    width: 500px;
+    top: 230px;
+    left: 435px;
+}
+
+.form-title{
+    position: relative;
+    top: 10px;
+}
+
+.form-input{
+    display: block;
+    overflow: hidden;
+    padding: 0 4px 0 6px
+}
+
+.form-info{
+    position: relative;
+    top: 20px;
+}
+
+.submit-button{
+    margin-left: 67px;
+    margin-top: 17px;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+    <head th:replace="fragments :: head"></head>
+    <body>
+        <div id="page-container">
+            <div id="content-wrap">
+                <header>
+                    <div class="header-background">
+                        <img th:src="@{/images/tech-background.jpg}" class="header-image" alt="Not Found"/>
+                        <h3 class="welcome-text">Welcome To Diesel Banking</h3>
+                        <h5 class="welcome-text2">Where you're money is safe!</h5>
+                        <nav th:replace="fragments :: nav"></nav>
+                    </div>
+                </header>
+                <div id="account-content">
+                    <div class="service2">
+                        <h4 class="service-header">Services</h4>
+                        <div class="service-links">
+                            <ul>
+                                <li><a href="#">www.javatpoint.com</a></li>
+                                <li><a href="#">www.javacspoint.com</a></li>
+                                <li><a href="#">www.javatpoint.com/forum</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form">
+                        <h3 th:text="${title}" class="form-title"></h3>
+
+                        <form method="post" th:object="${account}" action="/account">
+                            <div class="form-group">
+                                <div class="form-info">
+                                    <label th:for="name" style="float: left;">Name:</label>
+                                    <span class="form-input">
+                                        <input class="form-control" th:field="*{name}" style="width: 200px; height: 30px;
+                                            margin-left: 15px;"/>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-info">
+                                    <label th:for="balance" style="float: left;">Amount:</label>
+                                    <span class="form-input">
+                                        <input class="form-control" th:field="*{balance}" style="width: 200px; height: 30px;"/>
+                                    </span>
+                                </div>
+                            </div>
+                            <input type="submit" class="submit-button"/>
+                        </form>
+                    </div>
+                    <div>
+                        <div class="welcome2">
+                            <h4 class="service-header">Welcome</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer th:replace="fragments :: footer"></footer>
+        </div>
+    </body>
+</html>
