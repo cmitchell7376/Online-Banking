@@ -12,11 +12,41 @@
                         <nav th:replace="fragments :: nav"></nav>
                     </div>
                 </header>
-                <div class="a">
-                    <span th:each="account : ${accounts}">
-                        <span th:text="${account.name}"></span>
-                        <span th:text="${account.balance}"></span>
-                    </span>
+                <div id="account-content">
+                    <div class="service2">
+                        <h4 class="service-header">Services</h4>
+                        <div class="service-links">
+                            <ul>
+                                <li><a href="#">www.javatpoint.com</a></li>
+                                <li><a href="#">www.javacspoint.com</a></li>
+                                <li><a href="#">www.javatpoint.com/forum</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form">
+                        <div class="card-header" th:each="account : ${accounts}">
+                            <span class="card-header-text">Deposit</span>
+                            <span class="card-header-text2">Available: $</span>
+                            <span th:text="${account.balance}" class="balance"></span>
+                        </div>
+                        <div class="table-border">
+                            <table class="table table-striped" th:each="account : ${accounts}" >
+                                <tr>
+                                    <th>Name</th>
+                                    <th class="text-right">Balance</th>
+                                </tr>
+                                <tr>
+                                    <td th:text="${account.name}"></td>
+                                    <td th:text="${account.balance}" class="text-right"></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="welcome2">
+                            <h4 class="service-header">Welcome</h4>
+                        </div>
+                    </div>
                 </div>
             </div>
             <footer th:replace="fragments :: footer"></footer>

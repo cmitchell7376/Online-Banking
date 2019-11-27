@@ -232,7 +232,44 @@ li{
     margin-left: 30px;
 }
 
-.a{
+.table-border{
     position: absolute;
-    top: 400px;
+    top: 50px;
+    width: 400px;
+    left: 50px;
+}
+
+.card-header{
+    position: absolute;
+    border: 1px solid rgb(49,51,52);
+    left: 50px;
+    top: 21px;
+    height: 30px;
+    width: 400px;
+    background-color: rgb(49,51,52);
+}
+
+.card-header-text{
+    position: relative;
+    top: -11px;
+    right: 10px;
+    font-weight: bold;
+    color: white;
+}
+
+.card-header-text2{
+    position: relative;
+    top: -11px;
+    left: 170px;
+    font-weight: bold;
+    color: white;
+}
+
+.balance{
+    position: relative;
+    top: -11px;
+    font-weight: bold;
+    color: white;
+    left: 170px;
+
 }
