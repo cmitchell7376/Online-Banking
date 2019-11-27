@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+    <head th:replace="fragments :: head"></head>
+    <body>
+        <div id="page-container">
+            <div id="content-wrap">
+                <header>
+                    <div class="header-background">
+                        <img th:src="@{/images/tech-background.jpg}" class="header-image" alt="Not Found"/>
+                        <h3 class="welcome-text">Welcome To Diesel Banking</h3>
+                        <h5 class="welcome-text2">Where you're money is safe!</h5>
+                        <nav th:replace="fragments :: nav"></nav>
+                    </div>
+                </header>
+                <div class="a">
+                    <span th:each="account : ${accounts}">
+                        <span th:text="${account.name}"></span>
+                        <span th:text="${account.balance}"></span>
+                    </span>
+                </div>
+            </div>
+            <footer th:replace="fragments :: footer"></footer>
+        </div>
+    </body>
+</html>

@@ -1,8 +1,15 @@
 package com.example.Online.Banking.Models;
 
+import javax.validation.constraints.NotNull;
+
+import javax.validation.constraints.Size;
+
 public class Account {
 
     private int id = 0;
+
+    @NotNull
+    @Size(min = 1, max = 25, message = "Field empty")
     private String name = "";
     private double balance = 0.0;
     private User user;

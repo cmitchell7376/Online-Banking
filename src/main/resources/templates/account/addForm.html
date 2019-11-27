@@ -26,7 +26,7 @@
                     <div class="form">
                         <h3 th:text="${title}" class="form-title"></h3>
 
-                        <form method="post" th:object="${account}" action="/account">
+                        <form method="post" th:object="${account}" action="/add">
                             <div class="form-group">
                                 <div class="form-info">
                                     <label th:for="name" style="float: left;">Name:</label>
@@ -34,6 +34,7 @@
                                         <input class="form-control" th:field="*{name}" style="width: 200px; height: 30px;
                                             margin-left: 15px;"/>
                                     </span>
+                                    <span th:errors="*{name}" class="error"></span>
                                 </div>
                             </div>
                             <div class="form-group">
