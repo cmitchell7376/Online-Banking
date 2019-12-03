@@ -20,6 +20,12 @@ public class accountController {
         model.addAttribute("accounts", AccountData.getAll());
         model.addAttribute("title", "Users Accounts");
 
+        if(AccountData.getAll().size() == 0){
+            model.addAttribute("title", "Users Accounts");
+            model.addAttribute("message","No Account Present!");
+            return "account/index";
+        }
+
         return "account/index";
     }
 
@@ -37,6 +43,12 @@ public class accountController {
 
         if(errors.hasErrors()){
             model.addAttribute("title","Open Account Form");
+            return "account/addform";
+        }
+
+        if(AccountData.moreThanFour() == true){
+            model.addAttribute("title","Open Account Form");
+            model.addAttribute("error2","User can't have more then four accounts.");
             return "account/addform";
         }
 

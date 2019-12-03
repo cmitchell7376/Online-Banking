@@ -31,4 +31,11 @@ public class AccountData {
         }
         return theAccount;
     }
+
+    public static Boolean moreThanFour(){
+        if (accounts.size() < 4){
+            return false;
+        }
+        return true;
+    }
 }
