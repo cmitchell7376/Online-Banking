@@ -1,242 +1,14 @@
-#page-container{
-    position: relative;
-    min-height: 100vh;
-}
-
-#content-wrap{
-    padding-bottom: 2.5rem;
-}
-
-#footer{
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    background-color: rgb(49,51,52);
-    color: white;
-}
-
-.header-background{
-    position: absolute;
-    background-color: rgb(49,51,52);
-    width: 100%;
-    height: 150px;
-}
-
-.header-image{
-     height: 150px;
-     width: 100%;
-     opacity: 0.3
-}
-
-.welcome-text{
-    position: absolute;
-    left: 450px;
-    top: 40px;
-    color: white;
-}
-
-.welcome-text2{
-    position: absolute;
-    left: 500px;
-    top: 70px;
-    color: white;
-}
-
-#login-text{
-    position: absolute;
-    left: 1230px;
-}
-
-.results-box{
-    position: absolute;
-    border: 1px solid black;
-    background-color: rgb(49,51,52);
-    height: 300px;
-    width: 456px;
-    top: 205px;
-}
-
-.computer-image{
-    position: absolute;
-    height: 60px;
-    width: 80px;
-    top: 25px;
-    left: 20px;
-}
-
-.results-text{
-    position: relative;
-    color: white;
-    left: 110px;
-    top: 26px;
-}
-
-.header-per{
-    position: relative;
-    color: white;
-    top: 50px;
-    padding-left: 5px;
-    font-size: 14px;
-}
-
-.opportunities{
-    position: absolute;
-    border: 1px solid black;
-    background-color: rgb(49,51,52);
-    height: 300px;
-    width: 455px;
-    top: 205px;
-    left: 456px;
-}
-
-.solutions{
-    position: absolute;
-    border: 1px solid black;
-    background-color: rgb(49,51,52);
-    height: 300px;
-    width: 439px;
-    top: 205px;
-    left: 910px;
-}
-
-.results-test2{
-    position: absolute;
-    color: white;
-    left: 110px;
-    top: 26px;
-}
-
-.header-per2{
-    position: relative;
-    color: white;
-    top: 88px;
-    padding-left: 5px;
-    font-size: 14px;
-}
-
-.service{
-    position: absolute;
-    border: 1px solid white;
-    border-right: 2px solid black;
-    border-right-style: dotted;
-    height: 300px;
-    width: 450px;
-    top: 505px;
-}
-
-#home-content{
-    min-height: calc(138vh - 70px);
-}
-
-.service-header{
-    position: relative;
-    color: black;
-    left: 10px;
-    top: 26px;
-}
-
-.service-links{
-    font-size: 20px;
-    position: relative;
-    top: 30px;
-    left: 5px;
-}
-
-li{
-    margin: 10px 0;
-}
-
-.welcome{
-    position: absolute;
-    border: 1px solid white;
-    border-right: 2px solid black;
-    border-right-style: dotted;
-    height: 300px;
-    width: 450px;
-    left: 453px;
-    top: 505px;
-}
-
-.news{
-    position: absolute;
-    border: 1px solid white;
-    height: 300px;
-    width: 430px;
-    left: 903px;
-    top: 505px;
-}
-
-.service-header{
-    position: relative;
-    color: black;
-    left: 10px;
-    top: 26px;
-}
-
-.service2{
-    position: absolute;
-    border: 1px solid white;
-    border-right: 2px solid black;
-    border-right-style: dotted;
-    height: 365px;
-    width: 400px;
-    top: 230px;
-}
-
 #account-content{
     min-height: calc(100vh - 70px);
 }
 
-.welcome2{
-    position: absolute;
-    border: 1px solid white;
-    border-left: 2px solid black;
-    border-left-style: dotted;
-    height: 365px;
-    width: 400px;
-    left: 957px;
-    top: 230px;
-}
-
-.form{
-    position: absolute;
-    height: 365px;
-    width: 500px;
-    top: 230px;
-    left: 435px;
-}
-
-.form-title{
+.balance{
     position: relative;
-    top: 10px;
-}
+    top: -11px;
+    font-weight: bold;
+    color: white;
+    left: 170px;
 
-.form-input{
-    display: block;
-    overflow: hidden;
-    padding: 0 4px 0 6px
-}
-
-.form-info{
-    position: relative;
-    top: 20px;
-}
-
-.submit-button{
-    margin-left: 67px;
-    margin-top: 17px;
-}
-
-.error{
-    color: red;
-    margin-left: 30px;
-}
-
-.table-border{
-    position: absolute;
-    top: 50px;
-    width: 400px;
-    left: 50px;
 }
 
 .card-header{
@@ -265,17 +37,237 @@ li{
     color: white;
 }
 
-.balance{
-    position: relative;
-    top: -11px;
-    font-weight: bold;
-    color: white;
-    left: 170px;
+.computer-image{
+    position: absolute;
+    height: 60px;
+    width: 80px;
+    top: 25px;
+    left: 20px;
+}
 
+#content-wrap{
+    padding-bottom: 2.5rem;
+}
+
+.error{
+    color: red;
+    margin-left: 30px;
+}
+
+#footer{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    background-color: rgb(49,51,52);
+    color: white;
+}
+
+.form{
+    position: absolute;
+    height: 365px;
+    width: 500px;
+    top: 230px;
+    left: 435px;
+}
+
+.form-title{
+    position: relative;
+    top: 10px;
+}
+
+.form-input{
+    display: block;
+    overflow: hidden;
+    padding: 0 4px 0 6px
+}
+
+.form-info{
+    position: relative;
+    top: 20px;
+}
+
+.header-background{
+    position: absolute;
+    background-color: rgb(49,51,52);
+    width: 100%;
+    height: 150px;
+}
+
+.header-image{
+     height: 150px;
+     width: 100%;
+     opacity: 0.3
+}
+
+.header-per{
+    position: relative;
+    color: white;
+    top: 50px;
+    padding-left: 5px;
+    font-size: 14px;
+}
+
+.header-per2{
+    position: relative;
+    color: white;
+    top: 88px;
+    padding-left: 5px;
+    font-size: 14px;
+}
+
+#home-content{
+    min-height: calc(138vh - 70px);
+}
+
+#login-text{
+    position: absolute;
+    left: 1230px;
+}
+
+li{
+    margin: 10px 0;
+}
+
+.news{
+    position: absolute;
+    border: 1px solid white;
+    height: 300px;
+    width: 430px;
+    left: 903px;
+    top: 505px;
 }
 
 .noAccount{
     position: relative;
     top: 150px;
     left: 150px;
+}
+
+.opportunities{
+    position: absolute;
+    border: 1px solid black;
+    background-color: rgb(49,51,52);
+    height: 300px;
+    width: 455px;
+    top: 205px;
+    left: 456px;
+}
+
+#page-container{
+    position: relative;
+    min-height: 100vh;
+}
+
+.results-box{
+    position: absolute;
+    border: 1px solid black;
+    background-color: rgb(49,51,52);
+    height: 300px;
+    width: 456px;
+    top: 205px;
+}
+
+.results-text{
+    position: relative;
+    color: white;
+    left: 110px;
+    top: 26px;
+}
+
+.results-test2{
+    position: absolute;
+    color: white;
+    left: 110px;
+    top: 26px;
+}
+
+.service{
+    position: absolute;
+    border: 1px solid white;
+    border-right: 2px solid black;
+    border-right-style: dotted;
+    height: 300px;
+    width: 450px;
+    top: 505px;
+}
+
+.service2{
+    position: absolute;
+    border: 1px solid white;
+    border-right: 2px solid black;
+    border-right-style: dotted;
+    height: 365px;
+    width: 400px;
+    top: 230px;
+}
+
+.service-header{
+    position: relative;
+    color: black;
+    left: 10px;
+    top: 26px;
+}
+
+.service-links{
+    font-size: 20px;
+    position: relative;
+    top: 30px;
+    left: 5px;
+}
+
+.solutions{
+    position: absolute;
+    border: 1px solid black;
+    background-color: rgb(49,51,52);
+    height: 300px;
+    width: 439px;
+    top: 205px;
+    left: 910px;
+}
+
+.submit-button{
+    margin-left: 67px;
+    margin-top: 17px;
+}
+
+.table-border{
+    position: absolute;
+    top: 50px;
+    width: 400px;
+    left: 50px;
+}
+
+.welcome{
+    position: absolute;
+    border: 1px solid white;
+    border-right: 2px solid black;
+    border-right-style: dotted;
+    height: 300px;
+    width: 450px;
+    left: 453px;
+    top: 505px;
+}
+
+.welcome2{
+    position: absolute;
+    border: 1px solid white;
+    border-left: 2px solid black;
+    border-left-style: dotted;
+    height: 365px;
+    width: 400px;
+    left: 957px;
+    top: 230px;
+}
+.welcome-text{
+    position: absolute;
+    left: 450px;
+    top: 40px;
+    color: white;
+}
+
+.welcome-text2{
+    position: absolute;
+    left: 500px;
+    top: 70px;
+    color: white;
 }
