@@ -271,3 +271,14 @@ li{
     top: 70px;
     color: white;
 }
+
+.select-form{
+    margin-bottom: 15px;
+    margin-left: 14px;
+}
+
+.depositForm{
+    position: absolute;
+    top: 85px;
+    left: 110px;
+}

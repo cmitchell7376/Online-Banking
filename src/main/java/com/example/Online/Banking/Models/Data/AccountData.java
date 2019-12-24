@@ -38,4 +38,14 @@ public class AccountData {
         }
         return true;
     }
+
+    public static Account getByName(String name){
+        Account theAccount = null;
+        for (Account account: accounts) {
+            if(account.getName().equalsIgnoreCase(name)){
+                theAccount = account;
+            }
+        }
+        return theAccount;
+    }
 }

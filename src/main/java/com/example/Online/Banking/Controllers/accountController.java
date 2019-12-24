@@ -8,6 +8,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
 
@@ -53,6 +54,29 @@ public class accountController {
         }
 
         AccountData.add(account);
+
+        return "redirect:account";
+    }
+
+    @RequestMapping(value = "deposit",method = RequestMethod.GET)
+    public String depositForm(Model model){
+
+        if(AccountData.getAll().size() == 0){
+            model.addAttribute("message","No Account Present!");
+            return "account/noDeposit";
+        }
+
+        model.addAttribute("accounts",AccountData.getAll());
+        model.addAttribute("title", "Deposit");
+        return "account/deposit";
+    }
+
+    @RequestMapping(value = "deposit",method = RequestMethod.POST)
+    public String processForm(Model model, @RequestParam String account, @RequestParam String amount){
+
+        Account tmpAccount = AccountData.getByName(account);
+        double newAmount = Double.parseDouble(amount);
+        tmpAccount.depost(newAmount);
 
         return "redirect:account";
     }
