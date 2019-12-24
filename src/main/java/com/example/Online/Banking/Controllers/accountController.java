@@ -76,7 +76,46 @@ public class accountController {
 
         Account tmpAccount = AccountData.getByName(account);
         double newAmount = Double.parseDouble(amount);
+
+        if(AccountData.negCheck(newAmount) == true){
+            model.addAttribute("title", "Deposit");
+            model.addAttribute("accounts",AccountData.getAll());
+            model.addAttribute("message2","Amount number cannot be negative");
+            return "account/deposit";
+        }
+
         tmpAccount.depost(newAmount);
+
+        return "redirect:account";
+    }
+
+    @RequestMapping(value = "withdraw",method = RequestMethod.GET)
+    public String withdrawForm(Model model){
+
+        if(AccountData.getAll().size() == 0){
+            model.addAttribute("message","No Account Present!");
+            return "account/noWithdraw";
+        }
+
+        model.addAttribute("accounts",AccountData.getAll());
+        model.addAttribute("title", "Withdraw");
+        return "account/withdraw";
+    }
+
+    @RequestMapping(value = "withdraw",method = RequestMethod.POST)
+    public String processForm2(Model model, @RequestParam String account, @RequestParam String amount){
+
+        Account tmpAccount = AccountData.getByName(account);
+        double newAmount = Double.parseDouble(amount);
+
+        if(AccountData.negCheck(newAmount) == true){
+            model.addAttribute("title", "withdraw");
+            model.addAttribute("accounts",AccountData.getAll());
+            model.addAttribute("message2","Amount number cannot be negative");
+            return "account/withdraw";
+        }
+
+        tmpAccount.withdrew(newAmount);
 
         return "redirect:account";
     }

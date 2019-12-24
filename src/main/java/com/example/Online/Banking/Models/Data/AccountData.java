@@ -48,4 +48,11 @@ public class AccountData {
         }
         return theAccount;
     }
+
+    public static Boolean negCheck(double num){
+        if(num < 0){
+            return true;
+        }
+        return false;
+    }
 }

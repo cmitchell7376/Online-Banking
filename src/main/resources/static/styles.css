@@ -49,9 +49,22 @@
     padding-bottom: 2.5rem;
 }
 
+.depositForm{
+    position: absolute;
+    top: 85px;
+    left: 110px;
+}
+
 .error{
     color: red;
     margin-left: 30px;
+}
+
+.error2{
+    position: relative;
+    color: red;
+    top: 200px;
+    left: 130px;
 }
 
 #footer{
@@ -215,6 +228,11 @@ li{
     left: 5px;
 }
 
+.select-form{
+    margin-bottom: 15px;
+    margin-left: 14px;
+}
+
 .solutions{
     position: absolute;
     border: 1px solid black;
@@ -270,15 +288,4 @@ li{
     left: 500px;
     top: 70px;
     color: white;
-}
-
-.select-form{
-    margin-bottom: 15px;
-    margin-left: 14px;
-}
-
-.depositForm{
-    position: absolute;
-    top: 85px;
-    left: 110px;
 }
