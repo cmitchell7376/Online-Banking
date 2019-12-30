@@ -63,6 +63,7 @@ public class accountController {
 
         if(AccountData.getAll().size() == 0){
             model.addAttribute("message","No Account Present!");
+            model.addAttribute("title", "Deposit");
             return "account/noDeposit";
         }
 
@@ -94,6 +95,7 @@ public class accountController {
 
         if(AccountData.getAll().size() == 0){
             model.addAttribute("message","No Account Present!");
+            model.addAttribute("title", "Withdraw");
             return "account/noWithdraw";
         }
 
