@@ -2,6 +2,23 @@
     min-height: calc(100vh - 70px);
 }
 
+.account-Too{
+    position: absolute;
+    top: 50px;
+    left: 1px;
+}
+
+.amount-box{
+    position: absolute;
+    top: 89px;
+    left: 80px;
+}
+
+.amount-Text{
+    position: absolute;
+    top: 90px;
+}
+
 .balance{
     position: relative;
     top: -11px;
@@ -53,6 +70,12 @@
     position: absolute;
     top: 85px;
     left: 110px;
+}
+
+.depositForm2{
+    position: absolute;
+    top: 85px;
+    left: 50px;
 }
 
 .error{
@@ -231,6 +254,12 @@ li{
 .select-form{
     margin-bottom: 15px;
     margin-left: 14px;
+}
+
+.select-form2{
+   position: absolute;
+   top: 50px;
+   left: 190px;
 }
 
 .solutions{

@@ -121,4 +121,38 @@ public class accountController {
 
         return "redirect:account";
     }
+
+    @RequestMapping(value = "transfer",method = RequestMethod.GET)
+    public String transferForm(Model model){
+
+        if(AccountData.getAll().size() == 0){
+            model.addAttribute("message","No Account Present!");
+            model.addAttribute("title", "Transfer");
+            return "account/noTransfer";
+        }
+
+        model.addAttribute("accounts",AccountData.getAll());
+        model.addAttribute("title", "Transfer");
+        return "account/transfer";
+    }
+
+    @RequestMapping(value = "transfer",method = RequestMethod.POST)
+    public String transferForm(Model model, @RequestParam String account, @RequestParam String account2,
+                               @RequestParam String amount){
+
+        Account tmpAccount = AccountData.getByName(account);
+        Account tmpAccount2 = AccountData.getByName(account2);
+        double newAmount = Double.parseDouble(amount);
+
+        if(AccountData.negCheck(newAmount) == true){
+            model.addAttribute("title", "Deposit");
+            model.addAttribute("accounts",AccountData.getAll());
+            model.addAttribute("message2","Amount number cannot be negative");
+            return "account/deposit";
+        }
+        tmpAccount.withdrew(newAmount);
+        tmpAccount2.depost(newAmount);
+
+        return "redirect:account";
+    }
 }
