@@ -131,6 +131,12 @@ public class accountController {
             return "account/noTransfer";
         }
 
+        if(AccountData.getAll().size() == 1){
+            model.addAttribute("message","Must Have More Than One Account!");
+            model.addAttribute("title", "Transfer");
+            return "account/noTransfer";
+        }
+
         model.addAttribute("accounts",AccountData.getAll());
         model.addAttribute("title", "Transfer");
         return "account/transfer";
@@ -145,11 +151,19 @@ public class accountController {
         double newAmount = Double.parseDouble(amount);
 
         if(AccountData.negCheck(newAmount) == true){
-            model.addAttribute("title", "Deposit");
+            model.addAttribute("title", "Transfer");
             model.addAttribute("accounts",AccountData.getAll());
             model.addAttribute("message2","Amount number cannot be negative");
-            return "account/deposit";
+            return "account/transfer";
         }
+
+        if (account.equalsIgnoreCase(account2)) {
+            model.addAttribute("title", "Transfer");
+            model.addAttribute("accounts",AccountData.getAll());
+            model.addAttribute("message2","Can Not Transfer Into Same Account");
+            return "account/transfer";
+        }
+
         tmpAccount.withdrew(newAmount);
         tmpAccount2.depost(newAmount);
 

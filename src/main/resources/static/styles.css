@@ -10,13 +10,13 @@
 
 .amount-box{
     position: absolute;
-    top: 89px;
+    top: 95px;
     left: 80px;
 }
 
 .amount-Text{
     position: absolute;
-    top: 90px;
+    top: 95px;
 }
 
 .balance{
@@ -87,6 +87,13 @@
     position: relative;
     color: red;
     top: 200px;
+    left: 130px;
+}
+
+.error3{
+    position: relative;
+    color: red;
+    top: 280px;
     left: 130px;
 }
 
@@ -259,7 +266,7 @@ li{
 .select-form2{
    position: absolute;
    top: 50px;
-   left: 190px;
+   left: 59px;
 }
 
 .solutions{
@@ -282,6 +289,12 @@ li{
     top: 50px;
     width: 400px;
     left: 50px;
+}
+
+.transfer-form-position{
+    position: relative;
+    left: 80px;
+    bottom: 40px;
 }
 
 .welcome{

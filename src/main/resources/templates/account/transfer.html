@@ -25,27 +25,29 @@
             </div>
             <div class="form">
                 <span th:text="${message}" class="noAccount"></span>
-                <span th:text="${message2}" class="error2"></span>
+                <span th:text="${message2}" class="error3"></span>
                 <h3 th:text="${title}"></h3>
-                <form method="post" action="/transfer" class="depositForm2">
-                    <span>Account Transferring From:</span>
-                    <select class="select-form" name="account">
-                        <option th:value="${account.name}" th:each="account : ${accounts}">
-                            <span th:text="${account.name}"></span>
-                        </option>
-                    </select>
-                    <span class="account-Too">Account Transferring To:</span>
-                    <select class="select-form2" name="account2">
-                        <option th:value="${account.name}" th:each="account : ${accounts}">
-                            <span th:text="${account.name}"></span>
-                        </option>
-                    </select>
-                    <div>
-                        <span class="amount-Text">Amount: $</span>
-                        <input class="amount-box" type="text" name="amount"/>
-                    </div>
-                    <input type="submit" style="margin-top: 90px;"/>
-                </form>
+                <div class="transfer-form-position">
+                    <form method="post" action="/transfer" class="depositForm2">
+                        <span>From:</span>
+                        <select class="select-form" name="account">
+                            <option th:value="${account.name}" th:each="account : ${accounts}">
+                                <span th:text="${account.name}"></span>
+                            </option>
+                        </select>
+                        <span class="account-Too">To:</span>
+                        <select class="select-form2" name="account2">
+                            <option th:value="${account.name}" th:each="account : ${accounts}">
+                                <span th:text="${account.name}"></span>
+                            </option>
+                        </select>
+                        <div>
+                            <span class="amount-Text">Amount: $</span>
+                            <input class="amount-box" type="text" name="amount"/>
+                        </div>
+                        <input type="submit" style="margin-top: 100px;"/>
+                    </form>
+                </div>
             </div>
             <div>
                 <div class="welcome2">
