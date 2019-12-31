@@ -284,6 +284,12 @@ li{
     margin-top: 17px;
 }
 
+.submit-button2{
+    position: relative;
+    top: 40px;
+    right: 151px;
+}
+
 .table-border{
     position: absolute;
     top: 50px;

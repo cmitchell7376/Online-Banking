@@ -169,4 +169,18 @@ public class accountController {
 
         return "redirect:account";
     }
+
+    @RequestMapping(value = "close",method = RequestMethod.GET)
+    public String closeForm(Model model){
+
+        if(AccountData.getAll().size() == 0){
+            model.addAttribute("message","No Account Present!");
+            model.addAttribute("title", "Close Account");
+            return "account/noClose";
+        }
+
+        model.addAttribute("accounts",AccountData.getAll());
+        model.addAttribute("title", "Close Account");
+        return "account/close";
+    }
 }
