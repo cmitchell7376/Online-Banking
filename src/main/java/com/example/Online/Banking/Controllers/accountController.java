@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+
 import javax.validation.Valid;
+import java.util.Iterator;
 
 @Controller
 public class accountController {
@@ -182,5 +184,28 @@ public class accountController {
         model.addAttribute("accounts",AccountData.getAll());
         model.addAttribute("title", "Close Account");
         return "account/close";
+    }
+
+    @RequestMapping(value = "confirm", method = RequestMethod.POST)
+    public String confirmprocess(Model model, @RequestParam String account){
+        model.addAttribute("text", "Are you sure you want to delete account");
+        model.addAttribute("accountName", account);
+        return "account/confirm";
+    }
+
+    @RequestMapping(value = "answer", method = RequestMethod.POST)
+    public String answerProcess(Model model, @RequestParam String accountName,
+                                @RequestParam(value = "no", required = false) String no){
+        String answer = no;
+        if(answer == null){
+            for(Iterator<Account> it = AccountData.getAll().iterator(); it.hasNext();){
+                Account account = it.next();
+                if(account.getName().equalsIgnoreCase(accountName)){
+                    it.remove();
+                }
+            }
+        }
+
+        return "redirect:account";
     }
 }

@@ -27,15 +27,19 @@
                 <span th:text="${message}" class="noAccount"></span>
                 <span th:text="${message2}" class="error2"></span>
                 <h3 th:text="${title}"></h3>
-                <form method="post" action="/confirm" class="depositForm">
-                    <span>Account:</span>
-                    <select class="select-form" name="account">
-                        <option th:value="${account.name}" th:each="account : ${accounts}">
-                            <span th:text="${account.name}"></span>
-                        </option>
-                    </select>
-                    <input type="submit" class="submit-button2"/>
-                </form>
+                <div class="confirm-text">
+                    <span th:text="${text}"></span>
+                    <b><span th:text="${accountName}"></span></b>
+                    <form method="post" action="/answer" class="yes">
+                        <input type="hidden" th:value="${accountName}" name="accountName"/>
+                        <input type="submit" value="Yes" class="submit-button2"/>
+                    </form>
+                    <form method="post" action="/answer" class="no">
+                        <input type="hidden" th:value="${accountName}" name="accountName"/>
+                        <input type="hidden" value="no" name="no"/>
+                        <input type="submit" value="No" class="submit-button2"/>
+                    </form>
+                </div>
             </div>
             <div>
                 <div class="welcome2">
