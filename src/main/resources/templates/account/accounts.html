@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+<div id="page-container">
+    <div id="content-wrap">
+        <header>
+            <div class="header-background">
+                <img th:src="@{/images/tech-background.jpg}" class="header-image" alt="Not Found"/>
+                <h3 class="welcome-text">Welcome To Diesel Banking</h3>
+                <h5 class="welcome-text2">Where you're money is safe!</h5>
+                <nav th:replace="fragments :: nav"></nav>
+            </div>
+        </header>
+        <div id="account-content">
+            <div class="service2">
+                <h4 class="service-header">Services</h4>
+                <div class="service-links">
+                    <ul>
+                        <li><a href="#">www.javatpoint.com</a></li>
+                        <li><a href="#">www.javacspoint.com</a></li>
+                        <li><a href="#">www.javatpoint.com/forum</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="form">
+                <span th:text="${message}" class="noAccount"></span>
+                <h3 th:text="${title}"></h3>
+                <div class="table-border">
+                    <div th:each="transaction : ${transactions}">
+                        <span th:text="${transaction.name}"></span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="welcome2">
+                    <h4 class="service-header">Welcome</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer th:replace="fragments :: footer"></footer>
+</div>
+</body>
+</html>

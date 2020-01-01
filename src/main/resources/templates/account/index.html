@@ -33,7 +33,7 @@
                                     <th class="text-right">Balance</th>
                                 </tr>
                                 <tr>
-                                    <td><a href="#" th:text="${account.name}"></a></td>
+                                    <td><a th:href="@{accounts(id=${account.id})}" th:text="${account.name}"></a></td>
                                     <td th:text="${account.balance}" class="text-right"></td>
                                 </tr>
                             </table>

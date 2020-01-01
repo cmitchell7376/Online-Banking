@@ -3,10 +3,13 @@ package com.example.Online.Banking.Models;
 import javax.validation.constraints.NotNull;
 
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Account {
 
     private int id = 0;
+    private List<Transaction> transactionList = new ArrayList<Transaction>();
 
     @NotNull
     @Size(min = 1, max = 25, message = "Field empty")
@@ -40,6 +43,10 @@ public class Account {
         return user;
     }
 
+    public List<Transaction> getTransactionList() {
+        return transactionList;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -52,11 +59,23 @@ public class Account {
         this.user = user;
     }
 
+    public void setTransactionList(List<Transaction> transactionList) {
+        this.transactionList = transactionList;
+    }
+
     public void depost(double amount){
         balance += amount;
     }
 
     public void withdrew(double amount){
         balance -= amount;
+    }
+
+    public void addTransaction(Transaction transaction){
+        transactionList.add(transaction);
+    }
+
+    public void removeTransaction(Transaction transaction){
+        transactionList.remove(transaction);
     }
 }
