@@ -25,11 +25,21 @@
             </div>
             <div class="form">
                 <span th:text="${message}" class="noAccount"></span>
-                <h3 th:text="${title}"></h3>
-                <div class="table-border">
-                    <div th:each="transaction : ${transactions}">
-                        <span th:text="${transaction.name}"></span>
-                    </div>
+                <div class="trans-title">
+                    <span class="available-balance">Available Balance</span>
+                    <span class="trans-name" th:text="${accountName}"></span>
+                    <span class="trans-balance" th:text="${accountBalance}"></span>
+                </div>
+                <div class="transaction-box">
+                    <table class="table table-striped table-bordered table-sm" th:each="transaction : ${transactions}">
+                        <tr>
+                            <td>
+                                <span th:text="${transaction.name}"></span>
+                                <span class="trans-amount" th:text="${transaction.amount}"></span>
+                                <div th:text="${transaction.time}"></div>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
             <div>

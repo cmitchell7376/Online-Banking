@@ -8,7 +8,8 @@ import java.util.List;
 
 public class Account {
 
-    private int id = 0;
+    private int id;
+    private static int nextId = 1;
     private List<Transaction> transactionList = new ArrayList<Transaction>();
 
     @NotNull
@@ -24,7 +25,8 @@ public class Account {
     }
 
     public Account(){
-        id += 1;
+        id = nextId;
+        nextId++;
     }
 
     public int getId() {

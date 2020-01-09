@@ -2,6 +2,7 @@ package com.example.Online.Banking.Controllers;
 
 import com.example.Online.Banking.Models.Account;
 import com.example.Online.Banking.Models.Data.AccountData;
+import com.example.Online.Banking.Models.Data.TransactionData;
 import com.example.Online.Banking.Models.Transaction;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Iterator;
 
 @Controller
@@ -89,10 +91,7 @@ public class accountController {
             return "account/deposit";
         }
 
-        Transaction transaction = new Transaction("Deposit",tmpAccount.getBalance(),newAmount);
-        transaction.setTime(LocalDate.now());
-        transaction.setAccount(tmpAccount);
-        tmpAccount.addTransaction(transaction);
+        TransactionData.makeDepositTransaction(tmpAccount,newAmount);
 
         tmpAccount.depost(newAmount);
 
@@ -126,10 +125,7 @@ public class accountController {
             return "account/withdraw";
         }
 
-        Transaction transaction = new Transaction("Withdraw",tmpAccount.getBalance(),newAmount);
-        transaction.setTime(LocalDate.now());
-        transaction.setAccount(tmpAccount);
-        tmpAccount.addTransaction(transaction);
+        TransactionData.makeWithdrawTransaction(tmpAccount,newAmount);
 
         tmpAccount.withdrew(newAmount);
 
@@ -178,15 +174,7 @@ public class accountController {
             return "account/transfer";
         }
 
-        Transaction transaction = new Transaction("Withdraw",tmpAccount.getBalance(),newAmount);
-        transaction.setTime(LocalDate.now());
-        transaction.setAccount(tmpAccount);
-        tmpAccount.addTransaction(transaction);
-
-        Transaction transaction2 = new Transaction("Deposit",tmpAccount2.getBalance(),newAmount);
-        transaction2.setTime(LocalDate.now());
-        transaction2.setAccount(tmpAccount2);
-        tmpAccount.addTransaction(transaction2);
+        TransactionData.makeTransferTransaction(tmpAccount,tmpAccount2,newAmount);
 
         tmpAccount.withdrew(newAmount);
         tmpAccount2.depost(newAmount);
@@ -235,10 +223,16 @@ public class accountController {
     public String accounts(Model model, @RequestParam int id){
 
         Account account = AccountData.getById(id);
+        model.addAttribute("accountName",account.getName());
+        model.addAttribute("accountBalance", "$" + account.getBalance());
+
+        ArrayList<Account> all = AccountData.getAll();
+
         if(account.getTransactionList().size() == 0){
             model.addAttribute("message","No Transactions");
         }
         model.addAttribute("transactions",account.getTransactionList());
+
        return "account/accounts";
     }
 }
