@@ -177,11 +177,21 @@
 
 #login-text{
     position: absolute;
+    left: 1170px;
+}
+
+#login-text2{
+    position: absolute;
     left: 1230px;
 }
 
 li{
     margin: 10px 0;
+}
+
+.a{
+    position:relative;
+    left: 150px;
 }
 
 .news{
@@ -218,6 +228,11 @@ li{
 #page-container{
     position: relative;
     min-height: 100vh;
+}
+
+#page-container2{
+    position: relative;
+    min-height: 120vh;
 }
 
 .results-box{
@@ -259,6 +274,16 @@ li{
     border-right: 2px solid black;
     border-right-style: dotted;
     height: 365px;
+    width: 400px;
+    top: 230px;
+}
+
+.service3{
+    position: absolute;
+    border: 1px solid white;
+    border-right: 2px solid black;
+    border-right-style: dotted;
+    height: 490px;
     width: 400px;
     top: 230px;
 }
@@ -307,6 +332,12 @@ li{
     position: relative;
     top: 40px;
     right: 151px;
+}
+
+.submit-buttonR{
+    position: relative;
+    top: 20px;
+    right: 1px;
 }
 
 .table-border{
@@ -378,6 +409,18 @@ li{
     left: 957px;
     top: 230px;
 }
+
+.welcome3{
+    position: absolute;
+    border: 1px solid white;
+    border-left: 2px solid black;
+    border-left-style: dotted;
+    height: 490px;
+    width: 400px;
+    left: 957px;
+    top: 230px;
+}
+
 .welcome-text{
     position: absolute;
     left: 450px;

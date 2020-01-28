@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+    <head th:replace="fragments :: head"></head>
+    <body>
+        <div id="page-container">
+            <div id="content-wrap">
+                <header>
+                    <div class="header-background">
+                        <img th:src="@{/images/tech-background.jpg}" class="header-image" alt="Not Found"/>
+                        <h3 class="welcome-text">Welcome To Diesel Banking</h3>
+                        <h5 class="welcome-text2">Where you're money is safe!</h5>
+                        <nav th:replace="fragments :: nav"></nav>
+                    </div>
+                </header>
+                <div id="account-content">
+                    <div class="service2">
+                        <h4 class="service-header">Services</h4>
+                        <div class="service-links">
+                            <ul>
+                                <li><a href="#">www.javatpoint.com</a></li>
+                                <li><a href="#">www.javacspoint.com</a></li>
+                                <li><a href="#">www.javatpoint.com/forum</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form">
+                        <span th:text="${message}" class="noAccount"></span>
+                        <div style="padding-top: 30px;">
+                            <h3 th:text="${title}" class="a"></h3>
+                            <div style="padding-top: 10px;">
+                                <form method="post">
+                                    <div class="form-group">
+                                        <label for="username">Username:</label>
+                                        <input class="form-control" type="text" name="username" id="username"
+                                               placeholder="example@email.com"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Password:</label>
+                                        <input class="form-control" type="text" name="password" id="password"
+                                               placeholder="Min 5 Characters"/>
+                                    </div>
+                                    <input type="submit" value="Login"/>
+                                    <a th:href="@{registration}">
+                                        <span style="padding-left: 15px;">Create Account</span>
+                                    </a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="welcome3">
+                            <h4 class="service-header">Welcome</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer th:replace="fragments :: footer"></footer>
+        </div>
+    </body>
+</html>
