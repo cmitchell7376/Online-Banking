@@ -27,6 +27,10 @@ public class User {
     @ManyToMany
     private List<Account> accounts;
 
+    public User(){
+
+    }
+
     public User(String username, String password, String address){
         this.username = username;
         this.password = password;

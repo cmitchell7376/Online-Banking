@@ -24,6 +24,10 @@ public class Transaction {
     @ManyToOne
     private Account account;
 
+    public Transaction(){
+
+    }
+
     public Transaction(String name, Double previousAmount, Double amount){
         this.name = name;
         this.previousAmount = previousAmount;
