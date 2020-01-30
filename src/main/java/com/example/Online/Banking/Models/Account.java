@@ -26,6 +26,9 @@ public class Account {
     @JoinColumn(name = "account_id")
     private List<Transaction> transactionList = new ArrayList<Transaction>();
 
+    public Account(){
+    }
+
     public Account(String name, double balance){
         this.name = name;
         this.balance = balance;
