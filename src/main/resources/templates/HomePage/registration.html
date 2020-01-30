@@ -31,17 +31,20 @@
                         <form method="post" th:object="${user}">
                             <div class="form-group">
                                 <label th:for="username">Username:</label>
-                                <input class="form-control" th:field="*{username}"/>
+                                <input class="form-control" th:field="*{username}"
+                                       placeholder="No Spaces"/>
                                 <span th:errors="*{username}" class="error"></span>
                             </div>
                             <div class="form-group">
                                 <label th:for="password">Password:</label>
-                                <input class="form-control" th:field="*{password}"/>
+                                <input class="form-control" th:field="*{password}"
+                                       placeholder="between 5 - 20 characters"/>
                                 <span th:errors="*{password}" class="error"></span>
                             </div>
                             <div class="form-group">
                                 <label th:for="verifyPassword">Verify Password</label>
-                                <input class="form-control" type="text" name="verify-password"/>
+                                <input class="form-control" type="text" name="verify-password"
+                                       placeholder="must match password"/>
                             </div>
                             <div>
                                 <label th:for="address">Street Address</label>

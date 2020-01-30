@@ -1,32 +1,34 @@
 package com.example.Online.Banking.Models;
 
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-
 import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class Account {
 
+    @Id
+    @GeneratedValue
     private int id;
-    private static int nextId = 1;
-    private List<Transaction> transactionList = new ArrayList<Transaction>();
 
     @NotNull
     @Size(min = 1, max = 25, message = "Field empty")
     private String name = "";
+
     private double balance = 0.0;
-    private User user;
+
+    @ManyToMany(mappedBy = "accounts")
+    private List<User> users;
+
+    @OneToMany()
+    @JoinColumn(name = "account_id")
+    private List<Transaction> transactionList = new ArrayList<Transaction>();
 
     public Account(String name, double balance){
-        this();
         this.name = name;
         this.balance = balance;
-    }
-
-    public Account(){
-        id = nextId;
-        nextId++;
     }
 
     public int getId() {
@@ -41,8 +43,8 @@ public class Account {
         return balance;
     }
 
-    public User getUser() {
-        return user;
+    public List<User> getUser() {
+        return users;
     }
 
     public List<Transaction> getTransactionList() {
@@ -57,15 +59,15 @@ public class Account {
         this.balance = balance;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUser(List<User> users) {
+        this.users = users;
     }
 
     public void setTransactionList(List<Transaction> transactionList) {
         this.transactionList = transactionList;
     }
 
-    public void depost(double amount){
+    public void deposit(double amount){
         balance += amount;
     }
 

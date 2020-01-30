@@ -3,7 +3,6 @@ package com.example.Online.Banking.Controllers;
 import com.example.Online.Banking.Models.Account;
 import com.example.Online.Banking.Models.Data.AccountData;
 import com.example.Online.Banking.Models.Data.TransactionData;
-import com.example.Online.Banking.Models.Transaction;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 import javax.validation.Valid;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -93,7 +91,7 @@ public class accountController {
 
         TransactionData.makeDepositTransaction(tmpAccount,newAmount);
 
-        tmpAccount.depost(newAmount);
+        tmpAccount.deposit(newAmount);
 
         return "redirect:account";
     }
@@ -177,7 +175,7 @@ public class accountController {
         TransactionData.makeTransferTransaction(tmpAccount,tmpAccount2,newAmount);
 
         tmpAccount.withdrew(newAmount);
-        tmpAccount2.depost(newAmount);
+        tmpAccount2.deposit(newAmount);
 
         return "redirect:account";
     }

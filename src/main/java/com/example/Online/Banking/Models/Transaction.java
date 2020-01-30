@@ -1,25 +1,33 @@
 package com.example.Online.Banking.Models;
 
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+@Entity
 public class Transaction {
 
-    private int id = 0;
+    @Id
+    @GeneratedValue
+    private int id;
+
     private String name;
+
     private Object time;
+
     private Double previousAmount;
+
     private Double amount;
 
+    @ManyToOne
     private Account account;
 
     public Transaction(String name, Double previousAmount, Double amount){
-        this();
         this.name = name;
         this.previousAmount = previousAmount;
         this.amount = amount;
-    }
-
-    public Transaction(){
-        id += 1;
     }
 
     public int getId() {
